@@ -1,0 +1,53 @@
+.stat-box {
+  transition: all 0.25s ease;
+
+  &:hover {
+    border-color: var(--color-gold) !important;
+    background-color: var(--color-white) !important;
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+.stat-number {
+  font-family: var(--font-family-headings);
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.about-card {
+  background: radial-gradient(circle at 10% 10%, #1c3b63 0%, #0f2744 100%);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(198, 161, 91, 0.2);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(198, 161, 91, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+}
+
+.brand-crest {
+  width: 60px;
+  height: 60px;
+  background: rgba(198, 161, 91, 0.12);
+  border: 1px solid rgba(198, 161, 91, 0.3);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pillar-item {
+  font-size: 0.925rem;
+  font-weight: 500;
+}

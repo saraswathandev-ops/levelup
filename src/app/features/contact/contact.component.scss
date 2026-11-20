@@ -1,0 +1,45 @@
+.contact-card, .form-container {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-icon-box {
+  width: 44px;
+  height: 44px;
+  background-color: rgba(198, 161, 91, 0.12);
+  border: 1px solid rgba(198, 161, 91, 0.25);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+}
+
+.contact-phone-link {
+  color: var(--color-navy);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+
+  &:hover, &:focus-visible {
+    color: var(--color-gold-hover);
+  }
+}
+
+.form-control, .form-select, .input-group-text {
+  border-color: var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.9rem;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:focus {
+    border-color: var(--color-gold);
+    box-shadow: 0 0 0 3px rgba(198, 161, 91, 0.2);
+  }
+}
+
+.invalid-feedback {
+  font-size: 0.8125rem;
+  margin-top: 0.35rem;
+}

@@ -1,0 +1,52 @@
+<section id="services" class="section-padding bg-offwhite">
+  <div class="container">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-750 mx-auto mb-5">
+      <span class="section-eyebrow">WHAT WE DELIVER</span>
+      <h2 class="section-title mb-3">Advisory Services That Move Business Forward</h2>
+      <p class="lead mb-0">
+        From stronger internal controls to better financial decisions, we help businesses build the clarity and discipline needed for sustainable growth.
+      </p>
+    </div>
+
+    <!-- 5 Services Grid -->
+    <div class="row g-4 justify-content-center">
+      @for (service of services; track service.id; let idx = $index) {
+        <div class="col-lg-4 col-md-6 d-flex">
+          <div class="service-card w-100 p-4 p-xl-5 d-flex flex-column justify-content-between">
+            <div>
+              <div class="card-icon-wrapper mb-4">
+                <i class="bi" [ngClass]="service.icon"></i>
+              </div>
+              <h3 class="service-title h4 mb-3">{{ service.title }}</h3>
+              <p class="service-desc mb-4 text-muted">{{ service.shortDescription }}</p>
+
+              <div class="service-bullets mb-4">
+                <ul class="list-unstyled mb-0">
+                  @for (bullet of service.bullets; track bullet) {
+                    <li class="d-flex align-items-start gap-2 mb-2 small text-secondary">
+                      <i class="bi bi-check2-circle text-gold flex-shrink-0 mt-1"></i>
+                      <span>{{ bullet }}</span>
+                    </li>
+                  }
+                </ul>
+              </div>
+            </div>
+
+            <div class="card-action-bar pt-3 border-top border-light-subtle">
+              <a 
+                href="#contact" 
+                class="service-link d-inline-flex align-items-center gap-2 fw-semibold"
+                (click)="selectService($event, service.title)">
+                <span>Discuss this service</span>
+                <i class="bi bi-arrow-up-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

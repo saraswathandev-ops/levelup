@@ -1,0 +1,53 @@
+<nav class="navbar-custom" aria-label="Main Navigation">
+  <div class="container d-flex align-items-center justify-content-between">
+    
+    <!-- Brand Logo -->
+    <a href="#hero" class="brand-link" (click)="scrollToSection($event, 'hero')">
+      <div class="brand-badge">
+        <i class="bi bi-graph-up-arrow"></i>
+      </div>
+      <div class="brand-text-group">
+        <span class="brand-name">LEVELUP <span class="brand-highlight">CONSULTING</span></span>
+        <span class="brand-tagline d-none d-md-inline">Think Forward. Build Better.</span>
+      </div>
+    </a>
+
+    <!-- Mobile Hamburger Toggle -->
+    <button 
+      class="mobile-toggle d-lg-none" 
+      type="button"
+      (click)="toggleMenu()" 
+      [attr.aria-expanded]="isMenuOpen()" 
+      aria-label="Toggle navigation menu">
+      <i class="bi" [ngClass]="isMenuOpen() ? 'bi-x-lg' : 'bi-list'"></i>
+    </button>
+
+    <!-- Navigation Links & Action Button -->
+    <div class="nav-links-wrapper" [class.open]="isMenuOpen()">
+      <ul class="nav-list mb-0">
+        <li>
+          <a href="#hero" (click)="scrollToSection($event, 'hero')">Home</a>
+        </li>
+        <li>
+          <a href="#services" (click)="scrollToSection($event, 'services')">Services</a>
+        </li>
+        <li>
+          <a href="#about" (click)="scrollToSection($event, 'about')">About Us</a>
+        </li>
+        <li>
+          <a href="#mission" (click)="scrollToSection($event, 'mission')">Mission</a>
+        </li>
+        <li>
+          <a href="#contact" (click)="scrollToSection($event, 'contact')">Contact</a>
+        </li>
+      </ul>
+
+      <div class="nav-cta-wrapper">
+        <a href="#contact" class="btn-brand-primary" (click)="scrollToSection($event, 'contact')">
+          <i class="bi bi-calendar-check"></i> Book a Consultation
+        </a>
+      </div>
+    </div>
+
+  </div>
+</nav>

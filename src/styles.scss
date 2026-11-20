@@ -1,0 +1,126 @@
+// Global Stylesheet with Sass Modules
+@use "bootstrap/scss/bootstrap" as *;
+@use "bootstrap-icons/font/bootstrap-icons.css";
+@use "./styles/tokens" as tokens;
+@use "./styles/typography";
+@use "./styles/mixins" as mixins;
+
+// Global Layout & Spacing
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+// Reusable Buttons
+.btn-brand-primary {
+  background-color: var(--color-gold);
+  color: var(--color-navy);
+  font-weight: 600;
+  border: 1px solid var(--color-gold);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1.75rem;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+
+  &:hover, &:focus-visible {
+    background-color: var(--color-gold-hover);
+    border-color: var(--color-gold-hover);
+    color: var(--color-navy-dark);
+    box-shadow: var(--shadow-gold);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.btn-brand-secondary {
+  background-color: transparent;
+  color: var(--color-white);
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1.75rem;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+
+  &:hover, &:focus-visible {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.btn-brand-outline {
+  background-color: transparent;
+  color: var(--color-navy);
+  font-weight: 600;
+  border: 1.5px solid var(--color-navy);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 1.6rem;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+
+  &:hover, &:focus-visible {
+    background-color: var(--color-navy);
+    color: var(--color-white);
+    transform: translateY(-2px);
+  }
+}
+
+// Section styling
+.section-padding {
+  padding: 5.5rem 0;
+
+  @media (max-width: 768px) {
+    padding: 3.5rem 0;
+  }
+}
+
+.section-eyebrow {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.75rem;
+}
+
+// Accessibility focus states
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+// Reduced Motion Preference
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

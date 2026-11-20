@@ -1,0 +1,25 @@
+<!-- Navigation -->
+<header>
+  <app-navbar></app-navbar>
+</header>
+
+<!-- Main Landmark Content -->
+<main id="main-content">
+  <!-- Hero Section -->
+  <app-hero></app-hero>
+
+  <!-- 5 Core Advisory Services -->
+  <app-services (serviceSelected)="onServiceSelected($event)"></app-services>
+
+  <!-- About Us Section -->
+  <app-about></app-about>
+
+  <!-- Mission Section -->
+  <app-mission></app-mission>
+
+  <!-- Contact & Consultation Section -->
+  <app-contact></app-contact>
+</main>
+
+<!-- Footer Landmark -->
+<app-footer></app-footer>

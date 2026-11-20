@@ -1,0 +1,77 @@
+<footer class="footer-custom">
+  <div class="container">
+    <div class="row g-4 justify-content-between pb-5 border-bottom border-secondary border-opacity-25">
+      
+      <!-- Brand & Mission Summary -->
+      <div class="col-lg-5 col-md-12">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <div class="footer-badge">
+            <i class="bi bi-graph-up-arrow"></i>
+          </div>
+          <span class="footer-brand-title">LEVELUP <span class="text-gold">CONSULTING</span></span>
+        </div>
+        <p class="tagline mb-3">Think Forward. Build Better.</p>
+        <p class="footer-desc text-white-50">
+          Management & Business Consultants providing practical financial insight, internal audit, GST advisory, and Virtual CFO leadership to empower manufacturing, retail, and trading enterprises across Tamil Nadu.
+        </p>
+        <div class="location-item text-white-50 mt-3">
+          <i class="bi bi-geo-alt text-gold me-2"></i>
+          <span>{{ contact.location }}</span>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-3 col-md-6 col-6">
+        <h5 class="footer-heading mb-3">Quick Links</h5>
+        <ul class="footer-links list-unstyled mb-0">
+          <li><a href="#hero" (click)="scrollToSection($event, 'hero')">Home</a></li>
+          <li><a href="#services" (click)="scrollToSection($event, 'services')">Our Services</a></li>
+          <li><a href="#about" (click)="scrollToSection($event, 'about')">About Us</a></li>
+          <li><a href="#mission" (click)="scrollToSection($event, 'mission')">Our Mission</a></li>
+          <li><a href="#contact" (click)="scrollToSection($event, 'contact')">Contact & Consult</a></li>
+        </ul>
+      </div>
+
+      <!-- Direct Contact Details -->
+      <div class="col-lg-4 col-md-6 col-6">
+        <h5 class="footer-heading mb-3">Direct Contact</h5>
+        <div class="contact-links-list">
+          <div class="contact-entry mb-2">
+            <div class="text-white-50 small">Senior Consultant</div>
+            <a [href]="'tel:' + contact.primaryPhone" class="contact-val">
+              <i class="bi bi-telephone text-gold me-2"></i>
+              <span>{{ contact.primaryContactName }}: {{ contact.primaryPhoneDisplay }}</span>
+            </a>
+          </div>
+
+          <div class="contact-entry mb-2">
+            <div class="text-white-50 small">Consultant</div>
+            <a [href]="'tel:' + contact.secondaryPhone" class="contact-val">
+              <i class="bi bi-telephone text-gold me-2"></i>
+              <span>{{ contact.secondaryContactName }}: {{ contact.secondaryPhoneDisplay }}</span>
+            </a>
+          </div>
+
+          <div class="contact-entry mt-3">
+            <div class="text-white-50 small">Email Inquiries</div>
+            <a [href]="'mailto:' + contact.email" class="contact-val">
+              <i class="bi bi-envelope text-gold me-2"></i>
+              <span>{{ contact.email }}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Copyright -->
+    <div class="footer-bottom py-4 d-flex flex-column flex-md-row justify-content-between align-items-center text-white-50 small gap-2">
+      <div>
+        &copy; {{ currentYear }} LEVELUP CONSULTING. All Rights Reserved.
+      </div>
+      <div>
+        Management & Business Consultants | Ambattur, Chennai
+      </div>
+    </div>
+  </div>
+</footer>

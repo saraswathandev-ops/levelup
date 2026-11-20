@@ -1,0 +1,121 @@
+.hero-section {
+  background: radial-gradient(circle at 85% 20%, #1c3b63 0%, #0f2744 60%, #09192c 100%);
+  color: var(--color-white);
+  padding: 4rem 0 5rem;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 3rem 0 4rem;
+    min-height: auto;
+  }
+}
+
+.hero-ambient {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  opacity: 0.15;
+}
+
+.hero-ambient-1 {
+  width: 450px;
+  height: 450px;
+  background: var(--color-gold);
+  top: -100px;
+  right: -50px;
+}
+
+.hero-ambient-2 {
+  width: 350px;
+  height: 350px;
+  background: #3b82f6;
+  bottom: -50px;
+  left: 10%;
+}
+
+.hero-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(198, 161, 91, 0.12);
+  border: 1px solid rgba(198, 161, 91, 0.3);
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  color: var(--color-gold);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-gold);
+  box-shadow: 0 0 10px var(--color-gold);
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #f4eadb 0%, #c6a15b 50%, #b08b47 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  max-width: 620px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hero-feature-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+
+  &:hover {
+    border-color: rgba(198, 161, 91, 0.4);
+    transform: translateY(-4px);
+  }
+}
+
+.hero-icon-box {
+  width: 44px;
+  height: 44px;
+  background: rgba(198, 161, 91, 0.15);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.step-num {
+  font-family: var(--font-family-headings);
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: var(--color-gold);
+  background: rgba(198, 161, 91, 0.1);
+  border: 1px solid rgba(198, 161, 91, 0.25);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
