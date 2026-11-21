@@ -6,21 +6,23 @@
 @use "./styles/mixins" as mixins;
 
 // Global Layout & Spacing
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
 }
 
-body {
-  overflow-x: hidden;
-}
-
 // Reusable Buttons
 .btn-brand-primary {
-  background-color: var(--color-gold);
-  color: var(--color-navy);
+  background-color: var(--color-accent);
+  color: var(--color-white);
   font-weight: 600;
-  border: 1px solid var(--color-gold);
+  border: 1px solid var(--color-accent);
   border-radius: var(--radius-sm);
   padding: 0.75rem 1.75rem;
   transition: all 0.25s ease;
@@ -31,10 +33,10 @@ body {
   text-decoration: none;
 
   &:hover, &:focus-visible {
-    background-color: var(--color-gold-hover);
-    border-color: var(--color-gold-hover);
-    color: var(--color-navy-dark);
-    box-shadow: var(--shadow-gold);
+    background-color: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+    color: var(--color-white);
+    box-shadow: var(--shadow-accent);
     transform: translateY(-2px);
   }
 
@@ -59,8 +61,8 @@ body {
 
   &:hover, &:focus-visible {
     background-color: rgba(255, 255, 255, 0.1);
-    border-color: var(--color-gold);
-    color: var(--color-gold);
+    border-color: var(--color-accent);
+    color: var(--color-white);
     transform: translateY(-2px);
   }
 
@@ -115,6 +117,110 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   outline-offset: 3px;
 }
 
+// Card and Content Reveal Animations
+.reveal-card {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.28s ease;
+  will-change: opacity, transform;
+
+  &.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+
+  &.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroWordFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(28px);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes heroCardEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(32px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes heroStepIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Continuous ambient keyframes
+@keyframes goldGradientShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes cardGentleFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes ambientOrbPulse {
+  0% {
+    opacity: 0.12;
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    opacity: 0.22;
+    transform: scale(1.08) translate(12px, -8px);
+  }
+  100% {
+    opacity: 0.12;
+    transform: scale(1) translate(0, 0);
+  }
+}
+
 // Reduced Motion Preference
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -122,5 +228,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .reveal-card,
+  .reveal-fade-up {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }

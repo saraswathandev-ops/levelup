@@ -1,11 +1,12 @@
 import { Component, inject, PLATFORM_ID, output } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ServiceItem } from '../../core/models/service-item.model';
+import { ScrollRevealDirective } from '../../core/directives/scroll-reveal.directive';
 
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ScrollRevealDirective],
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.scss']
 })

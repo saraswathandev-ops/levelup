@@ -1,4 +1,4 @@
-<section id="hero" class="hero-section position-relative overflow-hidden">
+<section id="hero" class="hero-section position-relative overflow-hidden" appScrollReveal>
   <!-- Subtle decorative ambient glows -->
   <div class="hero-ambient hero-ambient-1" aria-hidden="true"></div>
   <div class="hero-ambient hero-ambient-2" aria-hidden="true"></div>
@@ -7,21 +7,21 @@
     <div class="row align-items-center min-vh-75 py-4">
       
       <div class="col-lg-8 col-xl-7">
-        <div class="hero-badge-pill mb-3">
+        <div class="hero-badge-pill anim-badge-in mb-3">
           <span class="badge-dot"></span>
           MANAGEMENT &amp; BUSINESS CONSULTANTS
         </div>
 
         <h1 class="hero-title text-white mb-4">
-          Think Forward.<br>
-          <span class="text-gold-gradient">Build Better.</span>
+          <span class="hero-line hero-line-1"><span class="hero-word word-1">Think </span><span class="hero-word word-2">Forward.</span></span><br>
+          <span class="hero-line hero-line-2 text-gold-gradient"><span class="hero-word word-3">Build </span><span class="hero-word word-4">Better.</span></span>
         </h1>
 
-        <p class="hero-subtitle mb-4 text-white-75 lead">
+        <p class="hero-subtitle anim-subtitle-in mb-4 text-white-75 lead">
           Practical financial insight and strategic business advisory to help manufacturing, retail, and trading businesses strengthen operations, improve financial visibility, and grow with confidence.
         </p>
 
-        <div class="hero-actions d-flex flex-wrap gap-3">
+        <div class="hero-actions anim-actions-in d-flex flex-wrap gap-3">
           <a href="#contact" class="btn-brand-primary" (click)="scrollToSection($event, 'contact')">
             <i class="bi bi-calendar-event"></i> Book a Consultation
           </a>
@@ -31,7 +31,7 @@
         </div>
 
         <!-- Trust Indicator Bar -->
-        <div class="hero-trust-bar mt-5 pt-4 border-top border-white border-opacity-10 d-flex flex-wrap gap-4 align-items-center">
+        <div class="hero-trust-bar anim-trust-in mt-5 pt-4 border-top border-white border-opacity-10 d-flex flex-wrap gap-4 align-items-center">
           <div class="trust-item d-flex align-items-center gap-2">
             <i class="bi bi-patch-check-fill text-gold"></i>
             <span class="text-white-75 small">Qualified CA Leadership</span>
@@ -49,7 +49,7 @@
 
       <!-- Hero Visual Card / Value Highlight -->
       <div class="col-lg-4 col-xl-5 d-none d-lg-block">
-        <div class="hero-feature-card p-4">
+        <div class="hero-feature-card anim-feature-card p-4">
           <div class="d-flex align-items-center justify-content-between mb-4 pb-3 border-bottom border-white border-opacity-10">
             <div>
               <span class="text-gold small fw-bold text-uppercase">Financial Precision</span>
@@ -61,28 +61,28 @@
           </div>
 
           <div class="roadmap-steps">
-            <div class="step-item d-flex gap-3 mb-3">
+            <div class="step-item step-anim-1 d-flex gap-3 mb-3">
               <div class="step-num">01</div>
               <div>
                 <strong class="text-white d-block">Internal Control &amp; Audit</strong>
                 <small class="text-white-50">Robust risk review &amp; governance</small>
               </div>
             </div>
-            <div class="step-item d-flex gap-3 mb-3">
+            <div class="step-item step-anim-2 d-flex gap-3 mb-3">
               <div class="step-num">02</div>
               <div>
                 <strong class="text-white d-block">GST &amp; Tax Compliance</strong>
                 <small class="text-white-50">Advisory, returns, and statutory audits</small>
               </div>
             </div>
-            <div class="step-item d-flex gap-3 mb-3">
+            <div class="step-item step-anim-3 d-flex gap-3 mb-3">
               <div class="step-num">03</div>
               <div>
                 <strong class="text-white d-block">Virtual CFO Intelligence</strong>
                 <small class="text-white-50">Cashflow forecasting &amp; MIS reporting</small>
               </div>
             </div>
-            <div class="step-item d-flex gap-3">
+            <div class="step-item step-anim-4 d-flex gap-3">
               <div class="step-num">04</div>
               <div>
                 <strong class="text-white d-block">Capital &amp; Fund Raising</strong>

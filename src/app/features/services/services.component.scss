@@ -18,16 +18,16 @@
   &:hover {
     transform: translateY(-6px);
     box-shadow: var(--shadow-md);
-    border-color: rgba(198, 161, 91, 0.5);
+    border-color: rgba(46, 90, 172, 0.4);
 
     .card-icon-wrapper {
-      background-color: var(--color-gold);
-      color: var(--color-navy-dark);
+      background-color: var(--color-accent);
+      color: var(--color-white);
       transform: scale(1.06);
     }
 
     .service-link {
-      color: var(--color-gold-hover);
+      color: var(--color-accent);
       transform: translateX(4px);
     }
   }

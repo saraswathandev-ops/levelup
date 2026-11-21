@@ -14,55 +14,91 @@
 
         <div class="contact-card p-4 rounded-4 bg-white border border-light-subtle shadow-sm mb-4">
           <h5 class="text-navy fw-bold mb-3 d-flex align-items-center gap-2">
-            <i class="bi bi-people-fill text-gold"></i> Direct Partner Contact
+            <i class="bi bi-people-fill text-accent"></i> Direct Partner Contact
           </h5>
           
           <!-- Nandha Kumar -->
           <div class="contact-item d-flex gap-3 mb-3 pb-3 border-bottom border-light-subtle">
             <div class="contact-icon-box flex-shrink-0">
-              <i class="bi bi-telephone-fill text-gold"></i>
+              <i class="bi bi-telephone-fill text-accent"></i>
             </div>
-            <div>
+            <div class="flex-grow-1">
               <div class="fw-bold text-dark">{{ contact.primaryContactName }}</div>
-              <small class="text-muted d-block mb-1">Senior Consultant</small>
-              <a [href]="'tel:' + contact.primaryPhone" class="contact-phone-link fw-semibold">
-                {{ contact.primaryPhoneDisplay }}
-              </a>
+              <small class="text-muted d-block mb-1">Managing Partner (Audit &amp; Advisory)</small>
+              <div class="d-flex flex-wrap align-items-center gap-2 mt-1">
+                <a [href]="'tel:' + contact.primaryPhone" class="contact-phone-link fw-semibold">
+                  {{ contact.primaryPhoneDisplay }}
+                </a>
+                <a 
+                  [href]="contact.whatsappUrl" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="whatsapp-chat-pill"
+                  title="Direct WhatsApp chat with Nandha Kumar">
+                  <i class="bi bi-whatsapp"></i>
+                  <span>WhatsApp</span>
+                </a>
+              </div>
             </div>
           </div>
 
           <!-- Ajay Hariharan -->
           <div class="contact-item d-flex gap-3 mb-3 pb-3 border-bottom border-light-subtle">
             <div class="contact-icon-box flex-shrink-0">
-              <i class="bi bi-telephone-fill text-gold"></i>
+              <i class="bi bi-telephone-fill text-accent"></i>
             </div>
-            <div>
+            <div class="flex-grow-1">
               <div class="fw-bold text-dark">{{ contact.secondaryContactName }}</div>
-              <small class="text-muted d-block mb-1">Consultant</small>
-              <a [href]="'tel:' + contact.secondaryPhone" class="contact-phone-link fw-semibold">
-                {{ contact.secondaryPhoneDisplay }}
-              </a>
+              <small class="text-muted d-block mb-1">Managing Partner (Strategy &amp; CFO)</small>
+              <div class="d-flex flex-wrap align-items-center gap-2 mt-1">
+                <a [href]="'tel:' + contact.secondaryPhone" class="contact-phone-link fw-semibold">
+                  {{ contact.secondaryPhoneDisplay }}
+                </a>
+                <a 
+                  [href]="contact.whatsappSecondaryUrl" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="whatsapp-chat-pill"
+                  title="Direct WhatsApp chat with Ajay Hariharan">
+                  <i class="bi bi-whatsapp"></i>
+                  <span>WhatsApp</span>
+                </a>
+              </div>
             </div>
           </div>
 
-          <!-- Email -->
+          <!-- Protected Email with Click-to-Mailto and Copy -->
           <div class="contact-item d-flex gap-3 mb-3 pb-3 border-bottom border-light-subtle">
             <div class="contact-icon-box flex-shrink-0">
-              <i class="bi bi-envelope-fill text-gold"></i>
+              <i class="bi bi-envelope-fill text-accent"></i>
             </div>
-            <div>
+            <div class="flex-grow-1">
               <div class="fw-bold text-dark">Email Inquiries</div>
               <small class="text-muted d-block mb-1">General &amp; Advisory</small>
-              <a [href]="'mailto:' + contact.email" class="contact-phone-link fw-semibold">
-                {{ contact.email }}
-              </a>
+              <div class="email-shield-box d-flex flex-wrap align-items-center gap-2 mt-1">
+                <button 
+                  type="button" 
+                  class="btn-email-mailto-link fw-semibold" 
+                  (click)="openEmail($event)"
+                  title="Click to launch mail application">
+                  {{ displayEmail }}
+                </button>
+                <button 
+                  type="button" 
+                  class="btn-copy-chip-contact" 
+                  (click)="copyEmail($event)"
+                  [title]="emailCopied() ? 'Email copied!' : 'Copy to clipboard'">
+                  <i class="bi" [ngClass]="emailCopied() ? 'bi-check-lg text-success' : 'bi-clipboard'"></i>
+                  <span>{{ emailCopied() ? 'Copied' : 'Copy' }}</span>
+                </button>
+              </div>
             </div>
           </div>
 
           <!-- Location -->
           <div class="contact-item d-flex gap-3">
             <div class="contact-icon-box flex-shrink-0">
-              <i class="bi bi-geo-alt-fill text-gold"></i>
+              <i class="bi bi-geo-alt-fill text-accent"></i>
             </div>
             <div>
               <div class="fw-bold text-dark">Office Location</div>
@@ -115,6 +151,7 @@
                 [class.is-invalid]="isFieldInvalid('fullName')"
                 placeholder="e.g. Ramesh Kumar" 
                 formControlName="fullName"
+                inputmode="text"
                 autocomplete="name">
               @if (isFieldInvalid('fullName')) {
                 <div class="invalid-feedback">Please enter your full name (at least 2 characters).</div>
@@ -133,6 +170,7 @@
                 [class.is-invalid]="isFieldInvalid('email')"
                 placeholder="e.g. ramesh@company.com" 
                 formControlName="email"
+                inputmode="email"
                 autocomplete="email">
               @if (isFieldInvalid('email')) {
                 <div class="invalid-feedback">Please provide a valid email address.</div>
@@ -153,6 +191,7 @@
                   [class.is-invalid]="isFieldInvalid('phone')"
                   placeholder="9876543210" 
                   formControlName="phone"
+                  inputmode="tel"
                   autocomplete="tel-national">
               </div>
               @if (isFieldInvalid('phone')) {

@@ -2,7 +2,7 @@
   transition: all 0.25s ease;
 
   &:hover {
-    border-color: var(--color-gold) !important;
+    border-color: var(--color-accent) !important;
     background-color: var(--color-white) !important;
     box-shadow: var(--shadow-sm);
   }
@@ -17,10 +17,10 @@
 }
 
 .about-card {
-  background: radial-gradient(circle at 10% 10%, #1c3b63 0%, #0f2744 100%);
+  background: radial-gradient(circle at 10% 10%, #2c3e6d 0%, #1f2e59 100%);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg);
-  border: 1px solid rgba(198, 161, 91, 0.2);
+  border: 1px solid rgba(144, 180, 238, 0.25);
   position: relative;
   overflow: hidden;
 
@@ -31,7 +31,7 @@
     right: 0;
     width: 150px;
     height: 150px;
-    background: radial-gradient(circle, rgba(198, 161, 91, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(144, 180, 238, 0.2) 0%, transparent 70%);
     pointer-events: none;
   }
 }
@@ -39,8 +39,8 @@
 .brand-crest {
   width: 60px;
   height: 60px;
-  background: rgba(198, 161, 91, 0.12);
-  border: 1px solid rgba(198, 161, 91, 0.3);
+  background: rgba(46, 90, 172, 0.2);
+  border: 1px solid rgba(144, 180, 238, 0.35);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;

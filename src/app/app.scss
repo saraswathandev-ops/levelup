@@ -1,0 +1,85 @@
+.mobile-sticky-dock {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 100%;
+  z-index: 1040;
+  background: rgba(17, 26, 51, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.5rem 0.75rem;
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.25);
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.dock-container {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr 1fr;
+  gap: 0.5rem;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.dock-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  padding: 0.45rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  min-height: 48px;
+
+  i {
+    font-size: 1.15rem;
+    line-height: 1;
+  }
+}
+
+.dock-btn-call {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  &:active {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.dock-btn-whatsapp {
+  background: #25d366;
+  color: #111a33;
+  border: 1px solid #25d366;
+  font-weight: 700;
+
+  &:active {
+    background: #1eb956;
+  }
+}
+
+.dock-btn-consult {
+  background: var(--color-accent);
+  color: var(--color-white);
+  border: 1px solid var(--color-accent);
+
+  &:active {
+    background: var(--color-accent-hover);
+  }
+}

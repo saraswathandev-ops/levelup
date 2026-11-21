@@ -1,10 +1,11 @@
 import { Component, inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { ScrollRevealDirective } from '../../core/directives/scroll-reveal.directive';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ScrollRevealDirective],
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.scss']
 })

@@ -1,5 +1,5 @@
-import { Component, inject, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject, signal, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EnquiryService } from '../../core/services/enquiry.service';
 import { environment } from '../../../environments/environment';
@@ -14,8 +14,40 @@ import { environment } from '../../../environments/environment';
 export class ContactComponent {
   private readonly fb = inject(FormBuilder);
   private readonly enquiryService = inject(EnquiryService);
+  private readonly platformId = inject(PLATFORM_ID);
 
   readonly contact = environment.contact;
+
+  // Protected anti-scraping email components
+  private readonly emailUser = 'admin.levelupconsulting';
+  private readonly emailDomain = 'gmail.com';
+  readonly emailCopied = signal(false);
+
+  get displayEmail(): string {
+    return `${this.emailUser}@${this.emailDomain}`;
+  }
+
+  openEmail(event?: Event): void {
+    if (event) {
+      event.preventDefault();
+    }
+    if (isPlatformBrowser(this.platformId)) {
+      window.location.href = `mailto:${this.emailUser}@${this.emailDomain}`;
+    }
+  }
+
+  copyEmail(event?: Event): void {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    if (isPlatformBrowser(this.platformId)) {
+      navigator.clipboard.writeText(`${this.emailUser}@${this.emailDomain}`).then(() => {
+        this.emailCopied.set(true);
+        setTimeout(() => this.emailCopied.set(false), 2200);
+      });
+    }
+  }
 
   readonly enquiryForm: FormGroup = this.fb.group({
     fullName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(80)]],

@@ -1,4 +1,4 @@
-import { Component, inject, PLATFORM_ID } from '@angular/core';
+import { Component, inject, PLATFORM_ID, signal } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { environment } from '../../../environments/environment';
 
@@ -13,6 +13,33 @@ export class FooterComponent {
   private readonly platformId = inject(PLATFORM_ID);
   readonly currentYear = new Date().getFullYear();
   readonly contact = environment.contact;
+
+  // Anti-scraping split email storage
+  private readonly emailUser = 'admin.levelupconsulting';
+  private readonly emailDomain = 'gmail.com';
+  readonly emailCopied = signal(false);
+
+  get displayEmail(): string {
+    return `${this.emailUser}@${this.emailDomain}`;
+  }
+
+  openEmail(event: Event): void {
+    event.preventDefault();
+    if (isPlatformBrowser(this.platformId)) {
+      window.location.href = `mailto:${this.emailUser}@${this.emailDomain}`;
+    }
+  }
+
+  copyEmail(event: Event): void {
+    event.preventDefault();
+    event.stopPropagation();
+    if (isPlatformBrowser(this.platformId)) {
+      navigator.clipboard.writeText(`${this.emailUser}@${this.emailDomain}`).then(() => {
+        this.emailCopied.set(true);
+        setTimeout(() => this.emailCopied.set(false), 2200);
+      });
+    }
+  }
 
   scrollToSection(event: Event, targetId: string): void {
     event.preventDefault();

@@ -1,0 +1,102 @@
+<section id="developer-showcase" class="developer-showcase-section py-5 position-relative overflow-hidden">
+  <!-- Subtle ambient glow background -->
+  <div class="dev-ambient" aria-hidden="true"></div>
+
+  <div class="container position-relative z-1 py-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 col-xl-9">
+        
+        <div class="dev-card reveal-card p-4 p-md-5" appScrollReveal [revealDelay]="100">
+          
+          <div class="row align-items-center g-4">
+            
+            <!-- Left Info Column -->
+            <div class="col-lg-7">
+              <div class="dev-badge mb-3">
+                <span class="badge-pulsing-dot"></span>
+                <span>ENGINEERING SPOTLIGHT</span>
+              </div>
+
+              <h3 class="dev-title text-white mb-2">
+                Crafted by 
+                <a 
+                  href="https://www.linkedin.com/in/saraswathan-i-56a389229" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="text-gold text-decoration-none dev-linkedin-link"
+                  title="Connect with Saraswathan on LinkedIn">
+                  Saraswathan Dev Fullstack
+                  <i class="bi bi-box-arrow-up-right fs-6 ms-1"></i>
+                </a>
+              </h3>
+              
+              <p class="dev-role text-white-50 mb-3">
+                Full Stack Web Architecture &amp; High-Performance Engineering
+              </p>
+
+              <p class="dev-desc text-white-75 small mb-4">
+                Engineered with enterprise-grade Angular SSR, GPU-accelerated micro-animations, strict type-safety, and accessible design principles for LEVELUP CONSULTING.
+              </p>
+
+              <!-- Tech Stack Badges Grid -->
+              <div class="d-flex flex-wrap gap-2 mb-4">
+                @for (tech of techStack; track tech) {
+                  <span class="tech-pill">
+                    <i class="bi bi-cpu text-gold me-1"></i>
+                    <span>{{ tech }}</span>
+                  </span>
+                }
+              </div>
+
+              <!-- Direct LinkedIn CTA Button -->
+              <div>
+                <a 
+                  href="https://www.linkedin.com/in/saraswathan-i-56a389229" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="btn-linkedin"
+                  title="Open Saraswathan's LinkedIn profile in a new tab">
+                  <i class="bi bi-linkedin me-2"></i>
+                  <span>Connect on LinkedIn</span>
+                  <i class="bi bi-arrow-right-short fs-5 ms-1"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Visual Engineering Card -->
+            <div class="col-lg-5">
+              <div class="engineering-panel p-3 p-md-4 rounded-3">
+                <div class="panel-header d-flex align-items-center gap-2 mb-3 pb-2 border-bottom border-white border-opacity-10">
+                  <span class="terminal-dot red"></span>
+                  <span class="terminal-dot yellow"></span>
+                  <span class="terminal-dot green"></span>
+                  <small class="text-white-50 ms-auto font-monospace">architecture.v21</small>
+                </div>
+
+                <div class="metric-item d-flex justify-content-between align-items-center mb-2">
+                  <span class="text-white-50 small">Application Framework</span>
+                  <span class="text-white small fw-bold">Angular 21 SSR</span>
+                </div>
+                <div class="metric-item d-flex justify-content-between align-items-center mb-2">
+                  <span class="text-white-50 small">Type System</span>
+                  <span class="text-white small fw-bold">Strict TypeScript</span>
+                </div>
+                <div class="metric-item d-flex justify-content-between align-items-center mb-2">
+                  <span class="text-white-50 small">Performance Strategy</span>
+                  <span class="text-white small fw-bold">Prerendered + Hydration</span>
+                </div>
+                <div class="metric-item d-flex justify-content-between align-items-center">
+                  <span class="text-white-50 small">Design Tokens</span>
+                  <span class="text-gold small fw-bold">Custom SCSS Tokens</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

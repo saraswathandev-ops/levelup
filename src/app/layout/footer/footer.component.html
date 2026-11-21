@@ -5,60 +5,108 @@
       <!-- Brand & Mission Summary -->
       <div class="col-lg-5 col-md-12">
         <div class="d-flex align-items-center gap-2 mb-3">
-          <div class="footer-badge">
-            <i class="bi bi-graph-up-arrow"></i>
+          <div class="footer-badge" aria-hidden="true">
+            <svg class="footer-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor">
+              <path d="M 71.28 14.43 L 66.03 11.47 L 60.77 9.66 L 52.05 8.12 L 46.03 8.12 L 40.38 8.89 L 31.28 11.60 L 20.00 18.94 L 11.41 29.38 L 7.44 38.14 L 5.77 44.72 L 5.64 56.96 L 7.44 64.95 L 10.00 70.88 L 10.64 71.01 L 44.23 37.11 L 47.95 40.59 L 48.72 40.46 L 53.08 23.45 L 36.03 27.58 L 39.36 32.22 L 13.72 57.60 L 12.95 56.31 L 12.44 50.26 L 14.23 40.21 L 18.46 31.57 L 24.10 24.87 L 32.05 19.20 L 41.92 15.72 L 46.54 15.08 L 55.51 15.59 L 66.03 19.46 Z" />
+              <path d="M 94.87 5.41 L 93.72 5.28 L 78.08 9.41 L 77.95 10.18 L 81.28 13.27 L 81.03 14.43 L 15.77 79.51 L 16.28 80.54 L 20.51 84.54 L 21.28 84.54 L 86.41 18.94 L 90.77 22.68 Z" />
+              <path d="M 86.28 29.38 L 85.38 29.38 L 80.77 34.28 L 83.08 39.05 L 84.87 46.65 L 85.00 54.12 L 83.97 60.57 L 80.77 68.69 L 75.77 75.90 L 68.97 81.83 L 61.28 85.70 L 54.87 87.37 L 43.21 87.50 L 42.69 86.60 L 51.54 77.96 L 55.77 81.31 L 60.13 63.79 L 43.21 68.17 L 42.95 69.07 L 46.28 72.29 L 46.28 73.07 L 30.00 88.92 L 29.49 90.46 L 39.74 94.07 L 47.18 94.85 L 57.69 94.07 L 65.90 91.49 L 72.18 88.14 L 81.41 80.28 L 88.08 70.10 L 91.67 58.51 L 92.05 50.00 L 91.54 43.69 L 89.87 37.37 Z" />
+            </svg>
           </div>
-          <span class="footer-brand-title">LEVELUP <span class="text-gold">CONSULTING</span></span>
+          <span class="footer-brand-title">LEVELUP <span class="text-accent">CONSULTING</span></span>
         </div>
         <p class="tagline mb-3">Think Forward. Build Better.</p>
         <p class="footer-desc text-white-50">
-          Management & Business Consultants providing practical financial insight, internal audit, GST advisory, and Virtual CFO leadership to empower manufacturing, retail, and trading enterprises across Tamil Nadu.
+          Management &amp; Business Consultants providing practical financial insight, internal audit, GST advisory, and Virtual CFO leadership to empower manufacturing, retail, and trading enterprises across Tamil Nadu.
         </p>
         <div class="location-item text-white-50 mt-3">
-          <i class="bi bi-geo-alt text-gold me-2"></i>
+          <i class="bi bi-geo-alt text-accent me-2"></i>
           <span>{{ contact.location }}</span>
         </div>
       </div>
 
       <!-- Quick Links -->
-      <div class="col-lg-3 col-md-6 col-6">
+      <div class="col-lg-3 col-md-6 col-12">
         <h5 class="footer-heading mb-3">Quick Links</h5>
         <ul class="footer-links list-unstyled mb-0">
           <li><a href="#hero" (click)="scrollToSection($event, 'hero')">Home</a></li>
           <li><a href="#services" (click)="scrollToSection($event, 'services')">Our Services</a></li>
           <li><a href="#about" (click)="scrollToSection($event, 'about')">About Us</a></li>
           <li><a href="#mission" (click)="scrollToSection($event, 'mission')">Our Mission</a></li>
-          <li><a href="#contact" (click)="scrollToSection($event, 'contact')">Contact & Consult</a></li>
+          <li><a href="#why-choose-us" (click)="scrollToSection($event, 'why-choose-us')">Why Choose Us</a></li>
+          <li><a href="#contact" (click)="scrollToSection($event, 'contact')">Contact &amp; Consult</a></li>
         </ul>
       </div>
 
-      <!-- Direct Contact Details -->
-      <div class="col-lg-4 col-md-6 col-6">
+      <!-- Direct Contact Details & Obfuscated Email -->
+      <div class="col-lg-4 col-md-6 col-12">
         <h5 class="footer-heading mb-3">Direct Contact</h5>
         <div class="contact-links-list">
-          <div class="contact-entry mb-2">
-            <div class="text-white-50 small">Senior Consultant</div>
-            <a [href]="'tel:' + contact.primaryPhone" class="contact-val">
-              <i class="bi bi-telephone text-gold me-2"></i>
-              <span>{{ contact.primaryContactName }}: {{ contact.primaryPhoneDisplay }}</span>
-            </a>
+          
+          <!-- Nandha Kumar -->
+          <div class="contact-entry mb-3">
+            <div class="text-white-50 small">Managing Partner (Audit &amp; Advisory)</div>
+            <div class="d-flex flex-wrap align-items-center gap-2 mt-1">
+              <a [href]="'tel:' + contact.primaryPhone" class="contact-val" title="Call directly">
+                <i class="bi bi-telephone text-accent me-1"></i>
+                <span>{{ contact.primaryContactName }}: {{ contact.primaryPhoneDisplay }}</span>
+              </a>
+              <a 
+                [href]="contact.whatsappUrl" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="whatsapp-badge-btn" 
+                title="Chat on WhatsApp">
+                <i class="bi bi-whatsapp"></i>
+                <span class="d-none d-sm-inline">WhatsApp</span>
+              </a>
+            </div>
           </div>
 
-          <div class="contact-entry mb-2">
-            <div class="text-white-50 small">Consultant</div>
-            <a [href]="'tel:' + contact.secondaryPhone" class="contact-val">
-              <i class="bi bi-telephone text-gold me-2"></i>
-              <span>{{ contact.secondaryContactName }}: {{ contact.secondaryPhoneDisplay }}</span>
-            </a>
+          <!-- Ajay Hariharan -->
+          <div class="contact-entry mb-3">
+            <div class="text-white-50 small">Managing Partner (Strategy &amp; CFO)</div>
+            <div class="d-flex flex-wrap align-items-center gap-2 mt-1">
+              <a [href]="'tel:' + contact.secondaryPhone" class="contact-val" title="Call directly">
+                <i class="bi bi-telephone text-accent me-1"></i>
+                <span>{{ contact.secondaryContactName }}: {{ contact.secondaryPhoneDisplay }}</span>
+              </a>
+              <a 
+                [href]="contact.whatsappSecondaryUrl" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="whatsapp-badge-btn" 
+                title="Chat on WhatsApp">
+                <i class="bi bi-whatsapp"></i>
+                <span class="d-none d-sm-inline">WhatsApp</span>
+              </a>
+            </div>
           </div>
 
+          <!-- Email with Click-to-Mailto and Copy Shield -->
           <div class="contact-entry mt-3">
             <div class="text-white-50 small">Email Inquiries</div>
-            <a [href]="'mailto:' + contact.email" class="contact-val">
-              <i class="bi bi-envelope text-gold me-2"></i>
-              <span>{{ contact.email }}</span>
-            </a>
+            <div class="email-action-wrapper d-inline-flex align-items-center gap-2 mt-1">
+              <button 
+                type="button" 
+                class="btn-email-mailto contact-val border-0 bg-transparent p-0 text-start" 
+                (click)="openEmail($event)" 
+                title="Click to open default mail client">
+                <i class="bi bi-envelope text-accent me-1"></i>
+                <span class="email-text">{{ displayEmail }}</span>
+              </button>
+              
+              <button 
+                type="button" 
+                class="btn-copy-chip" 
+                (click)="copyEmail($event)" 
+                [attr.aria-label]="emailCopied() ? 'Email copied to clipboard' : 'Copy email address'"
+                [title]="emailCopied() ? 'Copied!' : 'Copy email address'">
+                <i class="bi" [ngClass]="emailCopied() ? 'bi-check-lg text-success' : 'bi-clipboard'"></i>
+                <span class="copy-label">{{ emailCopied() ? 'Copied' : 'Copy' }}</span>
+              </button>
+            </div>
           </div>
+
         </div>
       </div>
 
@@ -69,8 +117,20 @@
       <div>
         &copy; {{ currentYear }} LEVELUP CONSULTING. All Rights Reserved.
       </div>
+      <div class="developer-credit text-center">
+        <span>Created by </span>
+        <a 
+          href="https://www.linkedin.com/in/saraswathan-i-56a389229" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="dev-name text-accent fw-semibold text-decoration-none"
+          title="Connect with Saraswathan on LinkedIn">
+          Saraswathan Dev Fullstack
+          <i class="bi bi-linkedin ms-1"></i>
+        </a>
+      </div>
       <div>
-        Management & Business Consultants | Ambattur, Chennai
+        Management &amp; Business Consultants | Ambattur, Chennai
       </div>
     </div>
   </div>

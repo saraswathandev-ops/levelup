@@ -17,9 +17,35 @@
   <!-- Mission Section -->
   <app-mission></app-mission>
 
+  <!-- Why Choose Us Section -->
+  <app-why-choose-us></app-why-choose-us>
+
   <!-- Contact & Consultation Section -->
   <app-contact></app-contact>
+
+  <!-- Developer Showcase Section -->
+  <app-developer-showcase></app-developer-showcase>
 </main>
 
 <!-- Footer Landmark -->
 <app-footer></app-footer>
+
+<!-- Mobile Sticky Quick-Action Dock (Direct WhatsApp, Call & Consultation) -->
+<nav class="mobile-sticky-dock d-md-none" aria-label="Mobile Quick Actions">
+  <div class="dock-container">
+    <a [href]="'tel:' + contact.primaryPhone" class="dock-btn dock-btn-call" title="Call Managing Partner">
+      <i class="bi bi-telephone-fill"></i>
+      <span>Call</span>
+    </a>
+    
+    <a [href]="contact.whatsappUrl" target="_blank" rel="noopener noreferrer" class="dock-btn dock-btn-whatsapp" title="Direct WhatsApp chat">
+      <i class="bi bi-whatsapp"></i>
+      <span>WhatsApp</span>
+    </a>
+    
+    <a href="#contact" (click)="scrollToContact($event)" class="dock-btn dock-btn-consult" title="Book Consultation">
+      <i class="bi bi-calendar-check"></i>
+      <span>Consult</span>
+    </a>
+  </div>
+</nav>

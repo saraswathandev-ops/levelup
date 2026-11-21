@@ -26,6 +26,7 @@ export class SeoService {
     this.title.setTitle(pageTitle);
 
     this.meta.updateTag({ name: 'description', content: description });
+    this.meta.updateTag({ name: 'author', content: 'Saraswathan Dev Fullstack' });
     this.meta.updateTag({
       name: 'keywords',
       content:

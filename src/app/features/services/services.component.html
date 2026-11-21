@@ -14,7 +14,10 @@
     <div class="row g-4 justify-content-center">
       @for (service of services; track service.id; let idx = $index) {
         <div class="col-lg-4 col-md-6 d-flex">
-          <div class="service-card w-100 p-4 p-xl-5 d-flex flex-column justify-content-between">
+          <div 
+            class="service-card reveal-card w-100 p-4 p-xl-5 d-flex flex-column justify-content-between"
+            appScrollReveal
+            [revealDelay]="idx * 110">
             <div>
               <div class="card-icon-wrapper mb-4">
                 <i class="bi" [ngClass]="service.icon"></i>

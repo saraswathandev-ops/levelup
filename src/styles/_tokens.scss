@@ -1,20 +1,26 @@
-// LEVELUP CONSULTING Brand Tokens
-$color-navy: #0F2744;
-$color-navy-light: #1C3B63;
-$color-navy-dark: #09192C;
-$color-gold: #C6A15B;
-$color-gold-hover: #B08B47;
-$color-gold-light: #F4EADB;
-$color-offwhite: #F9F9F8;
+// LEVELUP CONSULTING Brand Tokens - Monochromatic Corporate Navy Theme
+$color-navy: #1F2E59;           // Official brand navy from logo
+$color-navy-light: #2C3E6D;     // Elevated slate navy
+$color-navy-dark: #111A33;      // Deep executive navy background
+$color-accent: #2E5AAC;         // High-contrast corporate cobalt accent (replaces gold)
+$color-accent-hover: #23478B;   // Darker accent on interactive hover
+$color-accent-light: #EBF1FB;   // Soft icy navy background tint
+$color-gold: $color-accent;     // Seamless alias for existing template references
+$color-gold-hover: $color-accent-hover;
+$color-gold-light: $color-accent-light;
+$color-offwhite: #F8FAFC;
 $color-white: #FFFFFF;
-$color-text-dark: #2D3136;
-$color-text-muted: #5D6773;
-$color-border: #E4E7EB;
+$color-text-dark: #1E293B;
+$color-text-muted: #475569;
+$color-border: #E2E8F0;
 
 :root {
   --color-navy: #{$color-navy};
   --color-navy-light: #{$color-navy-light};
   --color-navy-dark: #{$color-navy-dark};
+  --color-accent: #{$color-accent};
+  --color-accent-hover: #{$color-accent-hover};
+  --color-accent-light: #{$color-accent-light};
   --color-gold: #{$color-gold};
   --color-gold-hover: #{$color-gold-hover};
   --color-gold-light: #{$color-gold-light};
@@ -27,10 +33,11 @@ $color-border: #E4E7EB;
   --font-family-headings: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --font-family-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   
-  --shadow-sm: 0 2px 4px rgba(15, 39, 68, 0.04);
-  --shadow-md: 0 6px 18px rgba(15, 39, 68, 0.08);
-  --shadow-lg: 0 14px 34px rgba(15, 39, 68, 0.12);
-  --shadow-gold: 0 8px 24px rgba(198, 161, 91, 0.25);
+  --shadow-sm: 0 2px 4px rgba(31, 46, 89, 0.05);
+  --shadow-md: 0 6px 18px rgba(31, 46, 89, 0.09);
+  --shadow-lg: 0 14px 34px rgba(31, 46, 89, 0.14);
+  --shadow-gold: 0 8px 24px rgba(46, 90, 172, 0.22);
+  --shadow-accent: 0 8px 24px rgba(46, 90, 172, 0.22);
   
   --radius-sm: 6px;
   --radius-md: 10px;
