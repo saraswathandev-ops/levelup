@@ -1,5 +1,5 @@
 <!-- Navigation -->
-<header>
+<header class="sticky-header-wrapper">
   <app-navbar></app-navbar>
 </header>
 
@@ -24,7 +24,7 @@
   <app-contact></app-contact>
 
   <!-- Developer Showcase Section -->
-  <app-developer-showcase></app-developer-showcase>
+  <!-- <app-developer-showcase></app-developer-showcase> -->
 </main>
 
 <!-- Footer Landmark -->
@@ -49,3 +49,15 @@
     </a>
   </div>
 </nav>
+
+<!-- Floating Scroll to Top Action Button -->
+@if (showScrollTop()) {
+  <button 
+    type="button" 
+    class="scroll-to-top-btn" 
+    (click)="scrollToTop()" 
+    aria-label="Scroll back to top" 
+    title="Back to Top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, ViewChild, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, inject, ViewChild, PLATFORM_ID, HostListener, signal } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';
@@ -8,7 +8,6 @@ import { AboutComponent } from './features/about/about.component';
 import { MissionComponent } from './features/mission/mission.component';
 import { WhyChooseUsComponent } from './features/why-choose-us/why-choose-us.component';
 import { ContactComponent } from './features/contact/contact.component';
-import { DeveloperShowcaseComponent } from './features/developer-showcase/developer-showcase.component';
 import { SeoService } from './core/services/seo.service';
 import { environment } from '../environments/environment';
 
@@ -24,7 +23,6 @@ import { environment } from '../environments/environment';
     MissionComponent,
     WhyChooseUsComponent,
     ContactComponent,
-    DeveloperShowcaseComponent,
     FooterComponent
   ],
   templateUrl: './app.html',
@@ -34,11 +32,28 @@ export class App implements OnInit {
   private readonly seoService = inject(SeoService);
   private readonly platformId = inject(PLATFORM_ID);
   readonly contact = environment.contact;
+  readonly showScrollTop = signal(false);
 
   @ViewChild(ContactComponent) contactComponent?: ContactComponent;
 
   ngOnInit(): void {
     this.seoService.initMetaTags();
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.showScrollTop.set(window.scrollY > 300);
+    }
+  }
+
+  scrollToTop(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
   }
 
   onServiceSelected(serviceTitle: string): void {
