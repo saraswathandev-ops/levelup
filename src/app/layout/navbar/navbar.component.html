@@ -18,50 +18,37 @@
       </div>
     </a>
 
-    <!-- Mobile Hamburger Toggle -->
-    <button 
-      class="mobile-toggle d-lg-none" 
+    <!-- Mobile and tablet navigation toggle -->
+    <button
+      class="mobile-toggle d-xl-none"
       type="button"
-      (click)="toggleMenu()" 
-      [attr.aria-expanded]="isMenuOpen()" 
-      aria-label="Toggle navigation menu">
-      <i class="bi" [ngClass]="isMenuOpen() ? 'bi-x-lg' : 'bi-list'"></i>
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="isMenuOpen()"
+      aria-controls="primary-navigation"
+      [attr.aria-label]="isMenuOpen() ? 'Close navigation menu' : 'Open navigation menu'">
+      <i class="bi" [ngClass]="isMenuOpen() ? 'bi-x-lg' : 'bi-list'" aria-hidden="true"></i>
     </button>
 
-    <!-- Navigation Backdrop for mobile dismissal -->
     @if (isMenuOpen()) {
-      <div class="nav-backdrop d-lg-none" (click)="closeMenu()" aria-hidden="true"></div>
+      <div class="nav-backdrop d-xl-none" (click)="closeMenu()" aria-hidden="true"></div>
     }
 
-    <!-- Navigation Links & Action Button -->
-    <div class="nav-links-wrapper" [class.open]="isMenuOpen()">
+    <div id="primary-navigation" class="nav-links-wrapper" [class.open]="isMenuOpen()">
       <ul class="nav-list mb-0">
-        <li>
-          <a href="#hero" (click)="scrollToSection($event, 'hero')">Home</a>
-        </li>
-        <li>
-          <a href="#services" (click)="scrollToSection($event, 'services')">Services</a>
-        </li>
-        <li>
-          <a href="#about" (click)="scrollToSection($event, 'about')">About Us</a>
-        </li>
-        <li>
-          <a href="#mission" (click)="scrollToSection($event, 'mission')">Mission</a>
-        </li>
-        <li>
-          <a href="#why-choose-us" (click)="scrollToSection($event, 'why-choose-us')">Why Us</a>
-        </li>
-        <li>
-          <a href="#contact" (click)="scrollToSection($event, 'contact')">Contact</a>
-        </li>
+        <li><a href="#hero" (click)="scrollToSection($event, 'hero')">Home</a></li>
+        <li><a href="#services" (click)="scrollToSection($event, 'services')">Services</a></li>
+        <li><a href="#about" (click)="scrollToSection($event, 'about')">About Us</a></li>
+        <li><a href="#mission" (click)="scrollToSection($event, 'mission')">Mission</a></li>
+        <li><a href="#why-choose-us" (click)="scrollToSection($event, 'why-choose-us')">Why Us</a></li>
+        <li><a href="#contact" (click)="scrollToSection($event, 'contact')">Contact</a></li>
+        <li><a href="#office-location" (click)="scrollToSection($event, 'office-location')">Office</a></li>
       </ul>
 
       <div class="nav-cta-wrapper">
         <a href="#contact" class="btn-brand-primary" (click)="scrollToSection($event, 'contact')">
-          <i class="bi bi-calendar-check"></i> Book a Consultation
+          <i class="bi bi-calendar-check" aria-hidden="true"></i> Book a Consultation
         </a>
       </div>
     </div>
-
   </div>
 </nav>
