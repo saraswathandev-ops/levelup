@@ -131,3 +131,47 @@
     transform: scale(1) translateY(0);
   }
 }
+
+
+// Dedicated office location section — aligned with the existing navy, blue and gold theme.
+.office-location-section {
+  background: var(--color-offwhite);
+}
+
+.office-location-detail {
+  color: var(--color-text);
+}
+
+.office-location-icon,
+.office-map-icon {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+  font-size: 1.2rem;
+}
+
+.office-location-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+  border: 1px solid rgba(144, 180, 238, 0.25);
+  border-radius: var(--radius-xl);
+  background: radial-gradient(circle at 10% 10%, #2c3e6d 0%, #1f2e59 100%);
+  box-shadow: var(--shadow-lg);
+
+  .office-map-icon {
+    width: 58px;
+    height: 58px;
+    flex-basis: 58px;
+    background: rgba(198, 161, 91, 0.15);
+    color: var(--color-gold);
+    font-size: 1.6rem;
+  }
+}
