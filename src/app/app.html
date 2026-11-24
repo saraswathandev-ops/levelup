@@ -23,6 +23,45 @@
   <!-- Contact & Consultation Section -->
   <app-contact></app-contact>
 
+  <!-- Dedicated Office & Location Card -->
+  <section id="office-location" class="section-padding office-location-section">
+    <div class="container">
+      <div class="office-location-card">
+        <div class="row g-0 align-items-stretch">
+          <div class="col-lg-7">
+            <div class="office-location-content">
+              <span class="section-eyebrow">VISIT LEVELUP</span>
+              <h2 class="section-title mb-3">Our Office &amp; Location</h2>
+              <p class="office-location-intro mb-4">We’d be happy to meet you. Visit our Chennai office to discuss your business goals, financial governance and next stage of growth.</p>
+              <div class="office-detail-row">
+                <span class="office-detail-icon"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i></span>
+                <div><h3 class="office-detail-title">Head Office</h3><p class="office-detail-text">{{ contact.location }}</p></div>
+              </div>
+              <div class="office-detail-row">
+                <span class="office-detail-icon"><i class="bi bi-clock-fill" aria-hidden="true"></i></span>
+                <div><h3 class="office-detail-title">Business Hours</h3><p class="office-detail-text">Monday – Saturday, 9:30 AM – 6:30 PM (IST)</p></div>
+              </div>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Ambattur%2C%20Chennai%2C%20Tamil%20Nadu%2C%20India" target="_blank" rel="noopener noreferrer" class="btn-brand-outline office-directions-btn">
+                <i class="bi bi-map me-1" aria-hidden="true"></i> Get Directions
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="office-location-visual">
+              <div class="office-location-visual-icon"><i class="bi bi-buildings" aria-hidden="true"></i></div>
+              <span class="office-visual-eyebrow">LET’S CONNECT</span>
+              <h3>Good conversations build better businesses.</h3>
+              <p>Meet our advisory team and discover practical ways to move your organisation forward.</p>
+              <a href="#contact" class="btn-brand-primary" (click)="scrollToContact($event)">
+                <i class="bi bi-calendar-check me-1" aria-hidden="true"></i> Book a Consultation
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Developer Showcase Section -->
   <!-- <app-developer-showcase></app-developer-showcase> -->
 </main>

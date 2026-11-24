@@ -103,12 +103,18 @@ html {
 
 .section-eyebrow {
   display: inline-block;
-  font-size: 0.8125rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-size: 0.9375rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  line-height: 1.4;
   text-transform: uppercase;
   color: var(--color-gold);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
+
+  @media (max-width: 767.98px) {
+    font-size: 0.875rem;
+    letter-spacing: 0.09em;
+  }
 }
 
 // Accessibility focus states

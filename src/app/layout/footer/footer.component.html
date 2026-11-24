@@ -3,7 +3,7 @@
     <div class="row g-4 justify-content-between pb-5 border-bottom border-secondary border-opacity-25">
       
       <!-- Brand & Mission Summary -->
-      <div class="col-lg-4 col-md-12">
+      <div class="col-lg-5 col-md-12">
         <div class="d-flex align-items-center gap-3 mb-3">
           <div class="footer-badge" aria-hidden="true">
             <svg class="footer-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor">
@@ -13,7 +13,7 @@
             </svg>
           </div>
           <div>
-            <div class="footer-brand-title">LEVELUP <span class="text-accent">CONSULTING</span></div>
+            <div class="footer-brand-title">LEVELUP <span>CONSULTING</span></div>
             <div class="tagline">THINK FORWARD BUILD BETTER</div>
           </div>
         </div>
@@ -30,16 +30,16 @@
       <div class="col-lg-3 col-md-4 col-6">
         <h5 class="footer-heading mb-3">Advisory Services</h5>
         <ul class="footer-links list-unstyled mb-0">
-          <li><a href="#services" (click)="scrollToSection($event, 'services')">Internal Control &amp; Audit</a></li>
-          <li><a href="#services" (click)="scrollToSection($event, 'services')">Management Consultancy</a></li>
-          <li><a href="#services" (click)="scrollToSection($event, 'services')">GST &amp; Tax Compliance</a></li>
-          <li><a href="#services" (click)="scrollToSection($event, 'services')">Virtual CFO Intelligence</a></li>
-          <li><a href="#services" (click)="scrollToSection($event, 'services')">Capital &amp; Fund Raising</a></li>
+          <li><a href="#service-internal-audit" (click)="scrollToSection($event, 'service-internal-audit')">Internal Control &amp; Audit</a></li>
+          <li><a href="#service-management-consultancy" (click)="scrollToSection($event, 'service-management-consultancy')">Management Consultancy</a></li>
+          <li><a href="#service-gst-advisory" (click)="scrollToSection($event, 'service-gst-advisory')">GST &amp; Tax Compliance</a></li>
+          <li><a href="#service-virtual-cfo" (click)="scrollToSection($event, 'service-virtual-cfo')">Virtual CFO Intelligence</a></li>
+          <li><a href="#service-fund-raising" (click)="scrollToSection($event, 'service-fund-raising')">Capital &amp; Fund Raising</a></li>
         </ul>
       </div>
 
       <!-- Quick Navigation -->
-      <div class="col-lg-2 col-md-4 col-6">
+      <div class="col-lg-3 col-md-4 col-6">
         <h5 class="footer-heading mb-3">Navigation</h5>
         <ul class="footer-links list-unstyled mb-0">
           <li><a href="#hero" (click)="scrollToSection($event, 'hero')">Home</a></li>
@@ -49,38 +49,9 @@
           <li><a href="#why-choose-us" (click)="scrollToSection($event, 'why-choose-us')">Why Us</a></li>
           <li><a href="#contact" (click)="scrollToSection($event, 'contact')">Contact &amp; Consult</a></li>
         </ul>
-      </div>
-
-      <!-- Office Location & Interactive Mapping -->
-      <div class="col-lg-3 col-md-4 col-12">
-        <h5 class="footer-heading mb-3">Office &amp; Location</h5>
-        
-        <div class="location-card p-3 rounded-3 mb-3">
-          <div class="d-flex align-items-start gap-2">
-            <i class="bi bi-geo-alt-fill text-accent fs-5 mt-1"></i>
-            <div>
-              <strong class="text-white d-block small">Head Office</strong>
-              <span class="text-white-50 small">Ambattur, Chennai, Tamil Nadu, India</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Business Operating Hours -->
-        <div class="office-hours mb-3">
-          <div class="text-white-50 small mb-1">
-            <i class="bi bi-clock-fill text-accent me-1"></i> Business Hours
-          </div>
-          <div class="small text-white fw-semibold">
-            Mon &ndash; Sat: 9:30 AM &ndash; 6:30 PM (IST)
-          </div>
-        </div>
-
-        <!-- Direct Consultation CTA -->
-        <div>
-          <a href="#contact" class="footer-consult-btn" (click)="scrollToSection($event, 'contact')">
-            <i class="bi bi-calendar-check me-1"></i> Book Consultation
-          </a>
-        </div>
+        <a href="#contact" class="footer-consult-btn mt-3" (click)="scrollToSection($event, 'contact')">
+          <i class="bi bi-calendar-check me-1"></i> Book Consultation
+        </a>
       </div>
 
     </div>

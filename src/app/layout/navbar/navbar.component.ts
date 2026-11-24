@@ -20,6 +20,18 @@ export class NavbarComponent {
     }
   }
 
+  @HostListener('document:keydown.escape')
+  onEscapeKeydown(): void {
+    this.closeMenu();
+  }
+
+  @HostListener('window:resize')
+  onWindowResize(): void {
+    if (isPlatformBrowser(this.platformId) && window.innerWidth >= 1200) {
+      this.closeMenu();
+    }
+  }
+
   toggleMenu(): void {
     this.isMenuOpen.update(open => !open);
   }
