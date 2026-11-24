@@ -23,40 +23,39 @@
   <!-- Contact & Consultation Section -->
   <app-contact></app-contact>
 
-  <!-- Dedicated Office & Location Section -->
+  <!-- Dedicated Office & Location Card -->
   <section id="office-location" class="section-padding office-location-section">
     <div class="container">
-      <div class="row align-items-center g-4">
-        <div class="col-lg-7">
-          <span class="section-eyebrow">VISIT LEVELUP</span>
-          <h2 class="section-title mb-3">Office &amp; Location</h2>
-          <p class="lead text-secondary mb-4">Connect with our advisory team at our Chennai office. We welcome conversations about your business, financial governance, and growth plans.</p>
-          <div class="office-location-detail d-flex align-items-start gap-3 mb-3">
-            <span class="office-location-icon"><i class="bi bi-geo-alt-fill"></i></span>
-            <div>
-              <h3 class="h6 fw-bold text-navy mb-1">Head Office</h3>
-              <p class="text-secondary mb-0">{{ contact.location }}</p>
+      <div class="office-location-card">
+        <div class="row g-0 align-items-stretch">
+          <div class="col-lg-7">
+            <div class="office-location-content">
+              <span class="section-eyebrow">VISIT LEVELUP</span>
+              <h2 class="section-title mb-3">Our Office &amp; Location</h2>
+              <p class="office-location-intro mb-4">We’d be happy to meet you. Visit our Chennai office to discuss your business goals, financial governance and next stage of growth.</p>
+              <div class="office-detail-row">
+                <span class="office-detail-icon"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i></span>
+                <div><h3 class="office-detail-title">Head Office</h3><p class="office-detail-text">{{ contact.location }}</p></div>
+              </div>
+              <div class="office-detail-row">
+                <span class="office-detail-icon"><i class="bi bi-clock-fill" aria-hidden="true"></i></span>
+                <div><h3 class="office-detail-title">Business Hours</h3><p class="office-detail-text">Monday – Saturday, 9:30 AM – 6:30 PM (IST)</p></div>
+              </div>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Ambattur%2C%20Chennai%2C%20Tamil%20Nadu%2C%20India" target="_blank" rel="noopener noreferrer" class="btn-brand-outline office-directions-btn">
+                <i class="bi bi-map me-1" aria-hidden="true"></i> Get Directions
+              </a>
             </div>
           </div>
-          <div class="office-location-detail d-flex align-items-start gap-3 mb-4">
-            <span class="office-location-icon"><i class="bi bi-clock-fill"></i></span>
-            <div>
-              <h3 class="h6 fw-bold text-navy mb-1">Business Hours</h3>
-              <p class="text-secondary mb-0">Monday – Saturday: 9:30 AM – 6:30 PM (IST)</p>
+          <div class="col-lg-5">
+            <div class="office-location-visual">
+              <div class="office-location-visual-icon"><i class="bi bi-buildings" aria-hidden="true"></i></div>
+              <span class="office-visual-eyebrow">LET’S CONNECT</span>
+              <h3>Good conversations build better businesses.</h3>
+              <p>Meet our advisory team and discover practical ways to move your organisation forward.</p>
+              <a href="#contact" class="btn-brand-primary" (click)="scrollToContact($event)">
+                <i class="bi bi-calendar-check me-1" aria-hidden="true"></i> Book a Consultation
+              </a>
             </div>
-          </div>
-          <a href="https://www.google.com/maps/search/?api=1&amp;query=Ambattur%2C%20Chennai%2C%20Tamil%20Nadu%2C%20India" target="_blank" rel="noopener noreferrer" class="btn-brand-outline">
-            <i class="bi bi-map"></i> Get Directions
-          </a>
-        </div>
-        <div class="col-lg-5">
-          <div class="office-location-card p-4 p-md-5 h-100">
-            <div class="office-map-icon mb-3"><i class="bi bi-geo-alt"></i></div>
-            <h3 class="h4 text-white fw-bold mb-2">Let’s meet and move forward.</h3>
-            <p class="text-white-75 mb-4">Speak with our team to explore practical advisory support for your organisation.</p>
-            <a href="#contact" class="btn-brand-primary" (click)="scrollToContact($event)">
-              <i class="bi bi-calendar-check me-1"></i> Book Consultation
-            </a>
           </div>
         </div>
       </div>
